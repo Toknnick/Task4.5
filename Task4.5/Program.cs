@@ -28,10 +28,10 @@ namespace Task4._5
 
             for (int i = array.Length - 1; i > 0; i--)
             {
-                int j = random.Next(i);
+                int number = random.Next(i);
                 int tempNumber = array[i];
-                array[i] = array[j];
-                array[j] = tempNumber;
+                array[i] = array[number];
+                array[number] = tempNumber;
             }
 
             foreach (int number in array)
