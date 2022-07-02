@@ -13,29 +13,19 @@ namespace Task4._5
             for (int i = 0; i < arrayOfNumbers.Length; i++)
                 arrayOfNumbers[i] = random.Next(valueOfRandom);
 
-            WriteArrayBeforeShuffle(arrayOfNumbers);
+            WriteArray(arrayOfNumbers, "Массив:");
             Shuffle(arrayOfNumbers);
-            WriteArrayAftereShuffle(arrayOfNumbers);
+            WriteArray(arrayOfNumbers, "Массив после перемешки:");
         }
 
-        static void WriteArrayBeforeShuffle(int[] arrayOfNumbers)
+        static void WriteArray(int[] arrayOfNumbers, string text)
         {
-            Console.WriteLine("Массив:");
-            WriteArray(arrayOfNumbers);
-        }
+            Console.WriteLine(text);
 
-        static void WriteArray(int[] arrayOfNumbers)
-        {
             foreach (int number in arrayOfNumbers)
                 Console.Write(number + " ");
 
             Console.WriteLine();
-        }
-
-        static void WriteArrayAftereShuffle(int[] arrayOfNumbers)
-        {
-            Console.WriteLine("\nПеремешанный массив:");
-            WriteArray(arrayOfNumbers);
         }
 
         static void Shuffle(int[] arrayOfNumbers)
@@ -44,10 +34,10 @@ namespace Task4._5
 
             for (int i = arrayOfNumbers.Length - 1; i > 0; i--)
             {
-                int number = random.Next(i);
+                int index = random.Next(i);
                 int tempNumber = arrayOfNumbers[i];
-                arrayOfNumbers[i] = arrayOfNumbers[number];
-                arrayOfNumbers[number] = tempNumber;
+                arrayOfNumbers[i] = arrayOfNumbers[index];
+                arrayOfNumbers[index] = tempNumber;
             }
         }
     }
