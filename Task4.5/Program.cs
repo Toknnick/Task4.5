@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Task4._5
 {
@@ -28,6 +28,7 @@ namespace Task4._5
         {
             foreach (int number in arrayOfNumbers)
                 Console.Write(number + " ");
+
             Console.WriteLine();
         }
 
@@ -37,7 +38,7 @@ namespace Task4._5
             WriteArray(arrayOfNumbers);
         }
 
-        static int[] Shuffle(int[] arrayOfNumbers)
+        static void Shuffle(int[] arrayOfNumbers)
         {
             Random random = new Random();
 
@@ -48,8 +49,6 @@ namespace Task4._5
                 arrayOfNumbers[i] = arrayOfNumbers[number];
                 arrayOfNumbers[number] = tempNumber;
             }
-
-            return arrayOfNumbers;
         }
     }
 }
